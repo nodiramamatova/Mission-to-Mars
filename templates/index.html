@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container text-center">
+    
+    <div class="jumbotron">
+      <div class="container">
+          <h1>Mission to Mars</h1>
+          <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars Data</a>    
+      </div>
+    </div>
+
+      <div>
+        <h2 class="text-left">Latest Mars News</h2>
+        <h4 class="text-left">{{mars.title}}</h4>
+        <p class="text-left">{{mars.p_text}}</p>
+      </div>
+    
+    <div class="row">
+      <div class="col-md-8">
+        <h2 class="text-left">Mars featured image</h2>
+        <img src="{{mars.featured_image_url}}"  alt="MarsImage">
+        <br>
+      </div>
+      
+      <div class=""col-md-4">
+        <h4>Martian Weather</h4>
+        <p>{{mars.mars_weather}}</p>
+      <br>
+      </div>
+
+      
+      <div class="col-md-12">
+        <h4>Mars Facts</h4>
+          {{mars.mars_facts|safe}}
+      </div>
+      
+      
+    </div>
+    
+
+  </div>
+
+  
+  <div class="container">
+  
+    <div class="row">
+    
+      <div class="col-md-6">
+          <h2>{{mars.hemisphere_image_urls[0].title}}</h2>
+          <img src="{{mars.hemisphere_image_urls[0].img_url}}" alt="Mars Hemisphere1">
+        </div>
+
+      <div class="col-md-6">
+          <h2>{{mars.hemisphere_image_urls[1].title}}</h2>
+        <img src="{{mars.hemisphere_image_urls[1].img_url}}" alt="Mars Hemisphere2">
+        </div>
+
+      <div class="col-md-6">
+          <h2>{{mars.hemisphere_image_urls[2].title}}</h2>
+          <img src="{{mars.hemisphere_image_urls[2].img_url}}" alt="Mars Hemisphere3">
+        </div>
+
+      <div class="col-md-6">
+          <h2>{{mars.hemisphere_image_urls[3].title}}</h2>
+          <img src="{{mars.hemisphere_image_urls[3].img_url}}" alt="Mars Hemisphere4">
+        </div>
+
+  </div>
+  
+</div>
+</body>
+
+</html>
