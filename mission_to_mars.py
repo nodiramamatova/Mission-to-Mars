@@ -23,6 +23,7 @@ def scrape():
 
     #get  latest News Title and Paragragh Text
     title = soup.find('div', class_='content_title').get_text()
+    time.sleep(5)
     p_text = soup.find('div', class_='article_teaser_body').get_text()
     
     mars_dictionary['title'] = title
@@ -90,6 +91,5 @@ def scrape():
     mars_dictionary['hemisphere_image_urls'] = hemisphere_image_urls
 
     return mars_dictionary
-
-
+#print(scrape())
 
